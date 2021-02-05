@@ -14274,8 +14274,8 @@ Alami, Adam, Marisa Leavitt Cohn, and Andrzej Wasowski. "How Do FOSS Communities
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="The-Goals-of-the-Analysis">The Goals of the Analysis<a class="anchor-link" href="#The-Goals-of-the-Analysis">&#182;</a></h2><p>We have collected information related to PR handling from members of the following FOSS communities [NOTE: reference to the study]: FOSSASIA, Odoo, DuckDuckGo, Linux Kernel, Coala, ROS, Plone, ReactJS, AngularJS, NodeJS, OpenGenus, Mozilla, OpenSUSE, jQuery, Apache. 387 respondents have indicated their project as 'Other' (than the above listed).</p>
-<p>We asked the respondents (open source software contributors) 12 questions, some with several subquestions, which clarify how they handle pull request evaluation in their communities, how they act when they are evaluators, and how do they feel when they are contributors, subjected  to evaluation.  The attached dataset contains only answers to 7 qantitative questions relevant for this analysis.  We repeat these questions here for your convenience:</p>
+<h2 id="The-Goals-of-the-Analysis">The Goals of the Analysis<a class="anchor-link" href="#The-Goals-of-the-Analysis">&#182;</a></h2><p>We have collected information related to PR handling from members of the following FOSS communities: FOSSASIA, Odoo, DuckDuckGo, Linux Kernel, Coala, ROS, Plone, ReactJS, AngularJS, NodeJS, OpenGenus, Mozilla, OpenSUSE, jQuery, Apache. 387 respondents have indicated their project as 'Other' (than the above listed).</p>
+<p>We asked the respondents (open source software contributors) 12 questions, some with several subquestions, which clarify how they handle pull request evaluation in their communities, how they act when they are evaluators, and how do they feel when they are contributors, subjected  to evaluation.  The attached dataset contains only answers to 7 quantitative questions relevant for this analysis.  We repeat these questions here for your convenience:</p>
 <p><strong>V27.</strong> <em>In general I  say no to most pull requests (PR)/patches. The contributor has to be persistent and prove that the PR/patch worth evaluating.</em></p>
 <p><strong>V28.</strong> <em>I don't consider a pull request/patch, unless I trust the contributor.</em></p>
 <p><strong>V29.</strong> <em>I don't consider a pull request/patch, unless the contributor is reliable.</em></p>
@@ -14364,7 +14364,7 @@ Alami, Adam, Marisa Leavitt Cohn, and Andrzej Wasowski. "How Do FOSS Communities
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Hypothesis">Hypothesis<a class="anchor-link" href="#Hypothesis">&#182;</a></h2><p>We test the veracity of the following hypotheses using Bayesian Data Analysis <a href="#[Kruschke-2015]-John-Kruschke.-Doing-Bayesian-Data-Analysis.-2nd-edition.-2015.">[Kruschke 2004]</a>.</p>
+<h2 id="Hypothesis">Hypothesis<a class="anchor-link" href="#Hypothesis">&#182;</a></h2><p>We test the veracity of the following hypotheses using Bayesian Data Analysis <a href="#[Kruschke-2015]-John-Kruschke.-Doing-Bayesian-Data-Analysis.-2nd-edition.-2015.">[Kruschke 2015]</a>.</p>
 <table>
 <thead><tr>
 <th>ID</th>
@@ -14499,13 +14499,13 @@ Alami, Adam, Marisa Leavitt Cohn, and Andrzej Wasowski. "How Do FOSS Communities
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Additionally, we define several auxiliry functions to assit in handling the data and generating plots for the analyses.</p>
+<p>Additionally, we define several auxiliry functions to assist in handling the data and generating plots for the analyses.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[61]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Auxiliary functions</span>
@@ -14531,165 +14531,10 @@ Alami, Adam, Marisa Leavitt Cohn, and Andrzej Wasowski. "How Do FOSS Communities
 
 <span class="c1">########################</span>
 <span class="c1">## Plotting functions ##</span>
-<span class="c1">########################</span>
-
-<span class="c1"># Countplot without -1s</span>
-<span class="k">def</span> <span class="nf">plot_count</span><span class="p">(</span><span class="n">q</span><span class="p">):</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
-    <span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">df2</span><span class="p">[</span><span class="n">df2</span><span class="p">[</span><span class="n">q</span><span class="p">]</span><span class="o">!=</span><span class="s1">&#39;-1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">Community</span><span class="p">,</span>
-                  <span class="n">hue</span><span class="o">=</span><span class="n">df2</span><span class="p">[</span><span class="n">df2</span><span class="p">[</span><span class="n">q</span><span class="p">]</span><span class="o">!=</span><span class="s1">&#39;-1&#39;</span><span class="p">][</span><span class="n">q</span><span class="p">])</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Data for question &#39;</span><span class="o">+</span><span class="n">q</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-<span class="c1"># Mean density plots of answers to variable v for all communities</span>
-<span class="k">def</span> <span class="nf">mean_densities</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">v</span><span class="p">):</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-    <span class="n">NUM_COLORS</span> <span class="o">=</span> <span class="mi">16</span>
-    <span class="n">cmap</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;tab20&#39;</span><span class="p">)</span>
-    <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">cmap</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">NUM_COLORS</span><span class="p">)]</span>
-    <span class="n">grp_idxs_colors_grp_names</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">df2</span><span class="o">.</span><span class="n">Community</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">codes</span><span class="o">.</span><span class="n">unique</span><span class="p">(),</span><span class="n">colors</span><span class="p">,</span><span class="n">df2</span><span class="o">.</span><span class="n">Community</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
-    <span class="p">[</span><span class="n">pm</span><span class="o">.</span><span class="n">plot_kde</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="s1">&#39;mu&#39;</span><span class="p">][:,</span><span class="n">i</span><span class="p">],</span> 
-                 <span class="n">plot_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="n">c</span><span class="p">},</span> <span class="n">cumulative</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
-                 <span class="n">label</span><span class="o">=</span><span class="n">n</span><span class="p">)</span> 
-      <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">n</span><span class="p">)</span> <span class="ow">in</span> <span class="n">grp_idxs_colors_grp_names</span><span class="p">]</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Mean density plots for &#39;</span><span class="o">+</span><span class="n">v</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-<span class="c1"># Posterior predictive check: plotting several draws of inferred normal and mean normal</span>
-<span class="k">def</span> <span class="nf">plot_ppc_normal_density</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">q</span><span class="p">):</span>
-    <span class="n">c_code</span><span class="o">=</span><span class="n">comm_to_code</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
-    <span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="n">step</span><span class="o">=.</span><span class="mi">01</span><span class="p">)</span>
-    <span class="n">s</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">((</span><span class="n">count_per_data_value</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">q</span><span class="p">)</span><span class="o">/</span><span class="n">count_per_data_value</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">q</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()))</span>
-    <span class="n">s</span><span class="o">.</span><span class="n">index</span><span class="o">=</span><span class="n">s</span><span class="o">.</span><span class="n">index</span><span class="o">+</span><span class="mi">1</span>
-    <span class="n">s</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">rot</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;royalblue&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Data of &#39;</span><span class="o">+</span><span class="n">c</span><span class="o">+</span><span class="s1">&#39; question &#39;</span><span class="o">+</span><span class="n">q</span><span class="p">)</span>
-    <span class="p">[</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">norm</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="n">m</span><span class="p">,</span><span class="n">scale</span><span class="o">=</span><span class="n">s</span><span class="p">)</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightblue&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=.</span><span class="mi">05</span><span class="p">)</span> 
-        <span class="k">for</span> <span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">s</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="s1">&#39;mu&#39;</span><span class="p">][</span><span class="mi">18000</span><span class="p">:,</span><span class="n">c_code</span><span class="p">],</span><span class="n">t</span><span class="p">[</span><span class="s1">&#39;sigma&#39;</span><span class="p">][</span><span class="mi">18000</span><span class="p">:,</span>  <span class="n">c_code</span><span class="p">])]</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">norm</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="s1">&#39;mu&#39;</span><span class="p">][:,</span><span class="n">c_code</span><span class="p">]),</span><span class="n">scale</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="s1">&#39;sigma&#39;</span><span class="p">][:,</span><span class="n">c_code</span><span class="p">]))</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-<span class="c1"># Posterior predictive check: plotting data bars together with cdf and HDI</span>
-<span class="k">def</span> <span class="nf">ppc_count_cdfs</span><span class="p">(</span><span class="n">trace2</span><span class="p">,</span><span class="n">df2</span><span class="p">,</span><span class="n">com1</span><span class="p">,</span><span class="n">q</span><span class="p">):</span>
-    <span class="n">mu2</span> <span class="o">=</span> <span class="n">trace2</span><span class="p">[</span><span class="s1">&#39;mu&#39;</span><span class="p">]</span>
-    <span class="n">sigma2</span> <span class="o">=</span> <span class="n">trace2</span><span class="p">[</span><span class="s1">&#39;sigma&#39;</span><span class="p">]</span>
-    <span class="n">code_com1</span> <span class="o">=</span> <span class="n">comm_to_code</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span><span class="n">com1</span><span class="p">)</span>
+<span class="c1">########################    </span>
     
-    <span class="c1"># Concatenate the fixed thresholds into the estimated thresholds</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="n">trace2</span><span class="p">[</span><span class="s1">&#39;theta_missing&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">thresholds2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">([</span><span class="mf">1.5</span><span class="p">],</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="mi">1</span><span class="p">)),</span>
-                        <span class="n">trace2</span><span class="p">[</span><span class="s1">&#39;theta_missing&#39;</span><span class="p">],</span>
-                        <span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">([</span><span class="mf">4.5</span><span class="p">],</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="mi">1</span><span class="p">))]</span>
+<span class="c1">## NOTE: This functions use InferenceData traces</span>
 
-    <span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
-
-    <span class="c1"># Posterior predictive probabilities of the outcomes</span>
-    <span class="n">threshCumProb2A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">thresholds2</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">threshCumProb2A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
-        <span class="n">threshCumProb2A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">norm</span><span class="p">()</span><span class="o">.</span><span class="n">cdf</span><span class="p">((</span><span class="n">thresholds2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">mu2</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">code_com1</span><span class="p">])</span><span class="o">/</span><span class="n">sigma2</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">code_com1</span><span class="p">])</span>    
-    <span class="n">outProb2A</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">threshCumProb2A</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="n">thresholds2</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mi">1</span><span class="p">))]</span>
-           <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="n">thresholds2</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mi">1</span><span class="p">)),</span> <span class="n">threshCumProb2A</span><span class="p">])</span>
-    <span class="n">yerr2A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">pm</span><span class="o">.</span><span class="n">hpd</span><span class="p">(</span><span class="n">outProb2A</span><span class="p">),</span> <span class="n">outProb2A</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)))</span>
-
-    <span class="n">ax1</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">outProb2A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">y</span><span class="o">=</span><span class="n">outProb2A</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
-                 <span class="n">yerr</span><span class="o">=</span><span class="n">yerr2A</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;darkblue&#39;</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">capthick</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-
-    <span class="c1"># Count bars from the data</span>
-    <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">((</span><span class="n">count_per_data_value</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span><span class="n">com1</span><span class="p">,</span><span class="n">q</span><span class="p">)</span><span class="o">/</span><span class="n">count_per_data_value</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span><span class="n">com1</span><span class="p">,</span><span class="n">q</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()))</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">,</span> <span class="n">rot</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;royalblue&#39;</span><span class="p">)</span>
-    <span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Data for </span><span class="si">{0}</span><span class="s1"> with Post. Pred.</span><span class="se">\n</span><span class="s1">N = </span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">com1</span><span class="p">,</span> <span class="n">df2</span><span class="p">[(</span><span class="n">df2</span><span class="o">.</span><span class="n">Community</span> <span class="o">==</span> <span class="n">com1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="n">q</span><span class="p">]</span><span class="o">!=</span><span class="s1">&#39;-1&#39;</span><span class="p">)</span> <span class="p">][</span><span class="n">q</span><span class="p">]</span><span class="o">.</span><span class="n">size</span><span class="p">))</span><span class="c1">#, fontdict=f_dict)</span>
-    <span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
-    <span class="n">ax1</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([</span><span class="s1">&#39;1&#39;</span><span class="p">,</span><span class="s1">&#39;2&#39;</span><span class="p">,</span><span class="s1">&#39;3&#39;</span><span class="p">,</span><span class="s1">&#39;4&#39;</span><span class="p">,</span><span class="s1">&#39;5&#39;</span><span class="p">])</span>
-    <span class="n">ax1</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
-
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-    
-<span class="c1"># Comparison of two communities code (original code from XXX)</span>
-<span class="k">def</span> <span class="nf">com</span><span class="p">(</span><span class="n">trace2</span><span class="p">,</span><span class="n">df2</span><span class="p">,</span><span class="n">com1</span><span class="p">,</span><span class="n">com2</span><span class="p">,</span><span class="n">q</span><span class="p">):</span>
-    <span class="n">mu2</span> <span class="o">=</span> <span class="n">trace2</span><span class="p">[</span><span class="s1">&#39;mu&#39;</span><span class="p">]</span>
-    <span class="n">sigma2</span> <span class="o">=</span> <span class="n">trace2</span><span class="p">[</span><span class="s1">&#39;sigma&#39;</span><span class="p">]</span>
-    <span class="n">code_com1</span> <span class="o">=</span> <span class="n">comm_to_code</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span><span class="n">com1</span><span class="p">)</span>
-    <span class="n">code_com2</span> <span class="o">=</span> <span class="n">comm_to_code</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span><span class="n">com2</span><span class="p">)</span>
-    
-    <span class="c1"># Concatenate the fixed thresholds into the estimated thresholds</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="n">trace2</span><span class="p">[</span><span class="s1">&#39;theta_missing&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">thresholds2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">([</span><span class="mf">1.5</span><span class="p">],</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="mi">1</span><span class="p">)),</span>
-                        <span class="n">trace2</span><span class="p">[</span><span class="s1">&#39;theta_missing&#39;</span><span class="p">],</span>
-                        <span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">([</span><span class="mf">4.5</span><span class="p">],</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="mi">1</span><span class="p">))]</span>
-
-    <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">14</span><span class="p">))</span>
-    <span class="n">ax1</span><span class="p">,</span><span class="n">ax2</span><span class="p">,</span><span class="n">ax3</span><span class="p">,</span><span class="n">ax4</span><span class="p">,</span><span class="n">ax5</span><span class="p">,</span><span class="n">ax6</span><span class="p">,</span><span class="n">ax7</span><span class="p">,</span><span class="n">ax8</span><span class="p">,</span><span class="n">ax9</span><span class="p">,</span><span class="n">ax10</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span> 
-
-    <span class="c1"># Mu</span>
-    <span class="n">pm</span><span class="o">.</span><span class="n">plot_posterior</span><span class="p">(</span><span class="n">mu2</span><span class="p">[:,</span><span class="n">code_com1</span><span class="p">],</span> <span class="n">point_estimate</span><span class="o">=</span><span class="s1">&#39;mode&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
-    <span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$\mu_</span><span class="si">{1}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">fontdict</span><span class="o">=</span><span class="n">f_dict</span><span class="p">)</span>
-    <span class="n">pm</span><span class="o">.</span><span class="n">plot_posterior</span><span class="p">(</span><span class="n">mu2</span><span class="p">[:,</span><span class="n">code_com2</span><span class="p">],</span> <span class="n">point_estimate</span><span class="o">=</span><span class="s1">&#39;mode&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax3</span><span class="p">)</span>
-    <span class="n">ax3</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$\mu_</span><span class="si">{2}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">fontdict</span><span class="o">=</span><span class="n">f_dict</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">title</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">([</span><span class="n">com1</span><span class="p">,</span> <span class="n">com2</span><span class="p">],</span> <span class="p">[</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax3</span><span class="p">]):</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">fontdict</span><span class="o">=</span><span class="n">f_dict</span><span class="p">)</span>
-
-    <span class="c1"># Sigma</span>
-    <span class="n">pm</span><span class="o">.</span><span class="n">plot_posterior</span><span class="p">(</span><span class="n">sigma2</span><span class="p">[:,</span><span class="n">code_com1</span><span class="p">],</span> <span class="n">point_estimate</span><span class="o">=</span><span class="s1">&#39;mode&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax5</span><span class="p">)</span>
-    <span class="n">ax5</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$\sigma_</span><span class="si">{1}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">fontdict</span><span class="o">=</span><span class="n">f_dict</span><span class="p">)</span>
-    <span class="n">pm</span><span class="o">.</span><span class="n">plot_posterior</span><span class="p">(</span><span class="n">sigma2</span><span class="p">[:,</span><span class="n">code_com2</span><span class="p">],</span> <span class="n">point_estimate</span><span class="o">=</span><span class="s1">&#39;mode&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax7</span><span class="p">)</span>
-    <span class="n">ax7</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$\sigma_</span><span class="si">{2}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">fontdict</span><span class="o">=</span><span class="n">f_dict</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">title</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">([</span><span class="n">com1</span><span class="o">+</span><span class="s1">&#39; Std. Dev.&#39;</span><span class="p">,</span> <span class="n">com2</span><span class="o">+</span><span class="s1">&#39; Std. Dev.&#39;</span><span class="p">],</span> <span class="p">[</span><span class="n">ax5</span><span class="p">,</span> <span class="n">ax7</span><span class="p">]):</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">fontdict</span><span class="o">=</span><span class="n">f_dict</span><span class="p">)</span>
-
-    <span class="c1"># Posterior distribution on the thresholds</span>
-    <span class="n">ax9</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">thresholds2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">thresholds2</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)),</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">6</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
-    <span class="n">ax9</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Mean Threshold&#39;</span><span class="p">,</span> <span class="n">fontdict</span><span class="o">=</span><span class="n">f_dict</span><span class="p">)</span>
-    <span class="n">ax9</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Threshold&#39;</span><span class="p">,</span> <span class="n">fontdict</span><span class="o">=</span><span class="n">f_dict</span><span class="p">)</span>
-    <span class="n">ax9</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">thresholds2</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
-               <span class="n">ymin</span><span class="o">=</span><span class="n">thresholds2</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span>
-               <span class="n">ymax</span><span class="o">=</span><span class="n">thresholds2</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">linestyles</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
-
-    <span class="c1"># Posterior predictive probabilities of the outcomes</span>
-    <span class="n">threshCumProb2A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">thresholds2</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">threshCumProb2A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
-        <span class="n">threshCumProb2A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">norm</span><span class="p">()</span><span class="o">.</span><span class="n">cdf</span><span class="p">((</span><span class="n">thresholds2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">mu2</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">code_com1</span><span class="p">])</span><span class="o">/</span><span class="n">sigma2</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">code_com1</span><span class="p">])</span>    
-    <span class="n">outProb2A</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">threshCumProb2A</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="n">thresholds2</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mi">1</span><span class="p">))]</span>
-           <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="n">thresholds2</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mi">1</span><span class="p">)),</span> <span class="n">threshCumProb2A</span><span class="p">])</span>
-    <span class="n">yerr2A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">pm</span><span class="o">.</span><span class="n">hpd</span><span class="p">(</span><span class="n">outProb2A</span><span class="p">),</span> <span class="n">outProb2A</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)))</span>
-
-    <span class="n">ax2</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">outProb2A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">y</span><span class="o">=</span><span class="n">outProb2A</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
-                 <span class="n">yerr</span><span class="o">=</span><span class="n">yerr2A</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
-
-    <span class="n">threshCumProb2B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">thresholds2</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">threshCumProb2B</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
-        <span class="n">threshCumProb2B</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">norm</span><span class="p">()</span><span class="o">.</span><span class="n">cdf</span><span class="p">((</span><span class="n">thresholds2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">mu2</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">code_com2</span><span class="p">])</span><span class="o">/</span><span class="n">sigma2</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">code_com2</span><span class="p">])</span>    
-    <span class="n">outProb2B</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">threshCumProb2B</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="n">thresholds2</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mi">1</span><span class="p">))]</span>
-               <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="n">thresholds2</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mi">1</span><span class="p">)),</span> <span class="n">threshCumProb2B</span><span class="p">])</span>
-    <span class="n">yerr2B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">pm</span><span class="o">.</span><span class="n">hpd</span><span class="p">(</span><span class="n">outProb2B</span><span class="p">),</span> <span class="n">outProb2B</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)))</span>
-
-    <span class="n">ax4</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">outProb2B</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">y</span><span class="o">=</span><span class="n">outProb2B</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
-             <span class="n">yerr</span><span class="o">=</span><span class="n">yerr2B</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
-
-    <span class="k">for</span> <span class="n">grp</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">([</span><span class="n">com1</span><span class="p">,</span> <span class="n">com2</span><span class="p">],</span> <span class="p">[</span><span class="n">ax2</span><span class="p">,</span> <span class="n">ax4</span><span class="p">]):</span>
-        <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">((</span><span class="n">count_per_data_value</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span><span class="n">grp</span><span class="p">,</span><span class="n">q</span><span class="p">)</span><span class="o">/</span><span class="n">count_per_data_value</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span><span class="n">grp</span><span class="p">,</span><span class="n">q</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()))</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">rot</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;royalblue&#39;</span><span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Data for </span><span class="si">{0}</span><span class="s1"> with Post. Pred.</span><span class="se">\n</span><span class="s1">N = </span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">grp</span><span class="p">,</span> <span class="n">df2</span><span class="p">[(</span><span class="n">df2</span><span class="o">.</span><span class="n">Community</span> <span class="o">==</span> <span class="n">grp</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="n">q</span><span class="p">]</span><span class="o">!=</span><span class="s1">&#39;-1&#39;</span><span class="p">)</span> <span class="p">][</span><span class="n">q</span><span class="p">]</span><span class="o">.</span><span class="n">size</span><span class="p">),</span> <span class="n">fontdict</span><span class="o">=</span><span class="n">f_dict</span><span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
-        <span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
-
-    <span class="c1"># Mu diff</span>
-    <span class="n">pm</span><span class="o">.</span><span class="n">plot_posterior</span><span class="p">(</span><span class="n">mu2</span><span class="p">[:,</span><span class="n">code_com2</span><span class="p">]</span><span class="o">-</span><span class="n">mu2</span><span class="p">[:,</span><span class="n">code_com1</span><span class="p">],</span> <span class="n">point_estimate</span><span class="o">=</span><span class="s1">&#39;mode&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax6</span><span class="p">)</span>
-    <span class="n">ax6</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$\mu_</span><span class="si">{2}</span><span class="s1">-\mu_</span><span class="si">{1}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">fontdict</span><span class="o">=</span><span class="n">f_dict</span><span class="p">)</span>
-    <span class="c1"># Sigma diff</span>
-    <span class="n">pm</span><span class="o">.</span><span class="n">plot_posterior</span><span class="p">(</span><span class="n">sigma2</span><span class="p">[:,</span><span class="n">code_com2</span><span class="p">]</span><span class="o">-</span><span class="n">sigma2</span><span class="p">[:,</span><span class="n">code_com1</span><span class="p">],</span> <span class="n">point_estimate</span><span class="o">=</span><span class="s1">&#39;mode&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax8</span><span class="p">)</span>
-    <span class="n">ax8</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$\sigma_</span><span class="si">{2}</span><span class="s1">-\sigma_</span><span class="si">{1}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">fontdict</span><span class="o">=</span><span class="n">f_dict</span><span class="p">)</span>
-    <span class="c1"># Effect size</span>
-    <span class="n">pm</span><span class="o">.</span><span class="n">plot_posterior</span><span class="p">((</span><span class="n">mu2</span><span class="p">[:,</span><span class="n">code_com2</span><span class="p">]</span><span class="o">-</span><span class="n">mu2</span><span class="p">[:,</span><span class="n">code_com1</span><span class="p">])</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">sigma2</span><span class="p">[:,</span><span class="n">code_com1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">sigma2</span><span class="p">[:,</span><span class="n">code_com2</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">point_estimate</span><span class="o">=</span><span class="s1">&#39;mode&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax10</span><span class="p">)</span>
-    <span class="n">ax10</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\frac{(\mu_2-\mu_1)}{\sqrt{(\sigma_1^2+\sigma_2^2)/2}}$&#39;</span><span class="p">,</span> <span class="n">fontdict</span><span class="o">=</span><span class="n">f_dict</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">title</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">([</span><span class="s1">&#39;Differences of Means&#39;</span><span class="p">,</span> <span class="s1">&#39;Difference of Std. Dev</span><span class="se">\&#39;</span><span class="s1">s&#39;</span><span class="p">,</span> <span class="s1">&#39;Effect Size&#39;</span><span class="p">],</span> <span class="p">[</span><span class="n">ax6</span><span class="p">,</span> <span class="n">ax8</span><span class="p">,</span> <span class="n">ax10</span><span class="p">]):</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">fontdict</span><span class="o">=</span><span class="n">f_dict</span><span class="p">)</span>
-
-    <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
-    <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-    
-    
-<span class="c1">### Inference data plotting</span>
 <span class="c1"># Mean density plots of answers to variable v for all communities</span>
 <span class="k">def</span> <span class="nf">mean_densities_inferencedata</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">v</span><span class="p">):</span>
     <span class="n">t_mu</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">posterior</span><span class="p">[</span><span class="s1">&#39;mu&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_masked_array</span><span class="p">(),</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -14726,9 +14571,9 @@ Alami, Adam, Marisa Leavitt Cohn, and Andrzej Wasowski. "How Do FOSS Communities
     
 <span class="c1"># Posterior predictive check: plotting data bars together with cdf and HDI</span>
 <span class="k">def</span> <span class="nf">ppc_count_cdfs_inferencedata</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">df2</span><span class="p">,</span><span class="n">com1</span><span class="p">,</span><span class="n">q</span><span class="p">):</span>
-    <span class="n">mu2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">posterior</span><span class="p">[</span><span class="s1">&#39;mu&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_masked_array</span><span class="p">(),</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="c1">#trace2[&#39;mu&#39;]</span>
-    <span class="n">sigma2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">posterior</span><span class="p">[</span><span class="s1">&#39;sigma&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_masked_array</span><span class="p">(),</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="c1">#trace2[&#39;sigma&#39;]</span>
-    <span class="n">theta_missing2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">posterior</span><span class="p">[</span><span class="s1">&#39;theta_missing&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_masked_array</span><span class="p">(),</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="c1">#trace2[&#39;sigma&#39;]</span>
+    <span class="n">mu2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">posterior</span><span class="p">[</span><span class="s1">&#39;mu&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_masked_array</span><span class="p">(),</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">sigma2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">posterior</span><span class="p">[</span><span class="s1">&#39;sigma&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_masked_array</span><span class="p">(),</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">theta_missing2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">posterior</span><span class="p">[</span><span class="s1">&#39;theta_missing&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_masked_array</span><span class="p">(),</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
     <span class="n">code_com1</span> <span class="o">=</span> <span class="n">comm_to_code</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span><span class="n">com1</span><span class="p">)</span>
     
     <span class="c1"># Concatenate the fixed thresholds into the estimated thresholds</span>
@@ -14752,7 +14597,7 @@ Alami, Adam, Marisa Leavitt Cohn, and Andrzej Wasowski. "How Do FOSS Communities
 
     <span class="c1"># Count bars from the data</span>
     <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">((</span><span class="n">count_per_data_value</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span><span class="n">com1</span><span class="p">,</span><span class="n">q</span><span class="p">)</span><span class="o">/</span><span class="n">count_per_data_value</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span><span class="n">com1</span><span class="p">,</span><span class="n">q</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()))</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">,</span> <span class="n">rot</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;royalblue&#39;</span><span class="p">)</span>
-    <span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Data for </span><span class="si">{0}</span><span class="s1"> with Post. Pred.</span><span class="se">\n</span><span class="s1">N = </span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">com1</span><span class="p">,</span> <span class="n">df2</span><span class="p">[(</span><span class="n">df2</span><span class="o">.</span><span class="n">Community</span> <span class="o">==</span> <span class="n">com1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="n">q</span><span class="p">]</span><span class="o">!=</span><span class="s1">&#39;-1&#39;</span><span class="p">)</span> <span class="p">][</span><span class="n">q</span><span class="p">]</span><span class="o">.</span><span class="n">size</span><span class="p">))</span><span class="c1">#, fontdict=f_dict)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Data for </span><span class="si">{0}</span><span class="s1"> with Post. Pred.</span><span class="se">\n</span><span class="s1">N = </span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">com1</span><span class="p">,</span> <span class="n">df2</span><span class="p">[(</span><span class="n">df2</span><span class="o">.</span><span class="n">Community</span> <span class="o">==</span> <span class="n">com1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="n">q</span><span class="p">]</span><span class="o">!=</span><span class="s1">&#39;-1&#39;</span><span class="p">)</span> <span class="p">][</span><span class="n">q</span><span class="p">]</span><span class="o">.</span><span class="n">size</span><span class="p">))</span>
     <span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
     <span class="n">ax1</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([</span><span class="s1">&#39;1&#39;</span><span class="p">,</span><span class="s1">&#39;2&#39;</span><span class="p">,</span><span class="s1">&#39;3&#39;</span><span class="p">,</span><span class="s1">&#39;4&#39;</span><span class="p">,</span><span class="s1">&#39;5&#39;</span><span class="p">])</span>
     <span class="n">ax1</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
@@ -14768,13 +14613,12 @@ Alami, Adam, Marisa Leavitt Cohn, and Andrzej Wasowski. "How Do FOSS Communities
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Raw-Data">Raw Data<a class="anchor-link" href="#Raw-Data">&#182;</a></h2><p>First we load the dataset.</p>
-
+<h2 id="Raw-Data">Raw Data<a class="anchor-link" href="#Raw-Data">&#182;</a></h2>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## Loading data</span>
@@ -14833,7 +14677,7 @@ memory usage: 5.3 KB
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[32]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## Show first three rows in the dataset</span>
@@ -14853,7 +14697,7 @@ memory usage: 5.3 KB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[32]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
 
 
 
@@ -14958,7 +14802,7 @@ $$<p>For the first and last outcomes (0 and 5), we consider the density of the i
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[43]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## Inference function</span>
@@ -15001,16 +14845,16 @@ $$<p>For the first and last outcomes (0 and 5), we consider the density of the i
         
         <span class="n">pr</span> <span class="o">=</span> <span class="n">outcome_probabilities</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
         
-        <span class="n">y</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">pr</span><span class="p">[:,</span><span class="n">grp_idx</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">observed</span><span class="o">=</span><span class="n">codes</span><span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="n">df2</span><span class="p">[</span><span class="n">q</span><span class="p">]</span><span class="o">!=</span><span class="s1">&#39;-1&#39;</span><span class="p">][</span><span class="n">q</span><span class="p">]))</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">pr</span><span class="p">[:,</span><span class="n">grp_idx</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">observed</span><span class="o">=</span><span class="n">codes</span><span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="n">df2</span><span class="p">[</span><span class="n">q</span><span class="p">]</span><span class="o">!=</span><span class="s1">&#39;-1&#39;</span><span class="p">][</span><span class="n">q</span><span class="p">]))</span>      
         
-        <span class="n">pm</span><span class="o">.</span><span class="n">model_to_graphviz</span><span class="p">(</span><span class="n">ordinal_model_multi_groups</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-    
         <span class="n">trace2</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">num_samples</span><span class="p">,</span> <span class="n">tune</span><span class="o">=</span><span class="n">tuning</span><span class="p">,</span> <span class="n">cores</span><span class="o">=</span><span class="n">chains</span><span class="p">)</span>
         
-        <span class="n">az</span><span class="o">.</span><span class="n">from_pymc3</span><span class="p">(</span><span class="n">trace2</span><span class="p">)</span><span class="o">.</span><span class="n">to_netcdf</span><span class="p">(</span><span class="n">q</span><span class="o">+</span><span class="s2">&quot;.netcdf&quot;</span><span class="p">)</span> <span class="c1"># Store it as an arviz trace</span>
+        <span class="c1">## Store traces as a .netcdf trace (arviz).</span>
+        <span class="c1">## The line below is commented by default because the repository already contains .netcdf traces.</span>
+        <span class="c1">## Delete the existing .netcdf files and uncomment line below to store new ones.</span>
+        <span class="c1"># az.from_pymc3(trace2).to_netcdf(q+&quot;.netcdf&quot;) </span>
     
-        <span class="k">return</span> <span class="n">trace2</span>
+        <span class="k">return</span> <span class="n">az</span><span class="o">.</span><span class="n">from_pymc3</span><span class="p">(</span><span class="n">trace2</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15033,10 +14877,11 @@ $$<p>For the first and last outcomes (0 and 5), we consider the density of the i
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[45]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># t_v27=infer(&#39;V27&#39;)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># perform inference</span>
+<span class="c1"># t_v27=infer(&#39;V27&#39;)</span>
 <span class="c1"># t_v28=infer(&#39;V28&#39;)</span>
 <span class="c1"># t_v29=infer(&#39;V29&#39;)</span>
 <span class="c1"># t_v30=infer(&#39;V30&#39;)</span>
@@ -15085,7 +14930,7 @@ $$<p>For the first and last outcomes (0 and 5), we consider the density of the i
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[62]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ppc_count_cdfs_inferencedata</span><span class="p">(</span><span class="n">t_v33</span><span class="p">,</span><span class="n">df2</span><span class="p">,</span><span class="s1">&#39;Comm.Coala&#39;</span><span class="p">,</span><span class="s1">&#39;V33&#39;</span><span class="p">)</span>
@@ -15100,6 +14945,21 @@ $$<p>For the first and last outcomes (0 and 5), we consider the density of the i
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>/home/pardo/.local/lib/python3.8/site-packages/arviz/stats/stats.py:340: UserWarning: hpd will be deprecated Please replace hdi
+  warnings.warn(
+/home/pardo/.local/lib/python3.8/site-packages/arviz/stats/stats.py:493: FutureWarning: hdi currently interprets 2d data as (draw, shape) but this will change in a future release to (chain, draw) for coherence with other functions
+  warnings.warn(
+</pre>
+</div>
+</div>
 
 <div class="jp-OutputArea-child">
 
@@ -15131,7 +14991,7 @@ $$<p>For the first and last outcomes (0 and 5), we consider the density of the i
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[66]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ppc_count_cdfs_inferencedata</span><span class="p">(</span><span class="n">t_v33</span><span class="p">,</span><span class="n">df2</span><span class="p">,</span><span class="s1">&#39;Comm.Linux_Kernel&#39;</span><span class="p">,</span><span class="s1">&#39;V33&#39;</span><span class="p">)</span>
@@ -15189,7 +15049,7 @@ $$<p>For the first and last outcomes (0 and 5), we consider the density of the i
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[78]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">m_c_v33</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">t_v33</span><span class="o">.</span><span class="n">posterior</span><span class="p">[</span><span class="s1">&#39;mu&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)[:,</span><span class="n">comm_to_code</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span><span class="s1">&#39;Comm.Coala&#39;</span><span class="p">)]</span>
@@ -15240,7 +15100,7 @@ $$<p>For the first and last outcomes (0 and 5), we consider the density of the i
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="H2:-The-Linux-Kernel-community-adopts-a-protective-style-of-governance-for-its-code-change-process">H2: The Linux Kernel community adopts a protective style of governance for its code change process<a class="anchor-link" href="#H2:-The-Linux-Kernel-community-adopts-a-protective-style-of-governance-for-its-code-change-process">&#182;</a></h3><p>To analyze this hypothesis we analyze the answers to questions V27-V30. In this case, we focus on the Linux Kernel community. Questions V27-V30 determine whether a community adopts a protective style of governance (see above). Concretely, we say a community that adopts a protective governance style if it is positive to any of the questions V27-V30.</p>
+<h3 id="H2:-The-Linux-Kernel-community-adopts-a-protective-style-of-governance-for-its-code-change-process">H2: The Linux Kernel community adopts a protective style of governance for its code change process<a class="anchor-link" href="#H2:-The-Linux-Kernel-community-adopts-a-protective-style-of-governance-for-its-code-change-process">&#182;</a></h3><p>To analyze this hypothesis we analyze the answers to questions V27-V30. In this case, we focus on the Linux Kernel community. Questions V27-V30 determine whether a community adopts a protective style of governance (see <a href="#The-Goals-of-the-Analysis">above</a>). Concretely, we say a community that adopts a protective governance style if it is positive to any of the questions V27-V30.</p>
 
 </div>
 </div>
@@ -15252,7 +15112,7 @@ $$<p>For the first and last outcomes (0 and 5), we consider the density of the i
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[71]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">m_lk_v27</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">t_v27</span><span class="o">.</span><span class="n">posterior</span><span class="p">[</span><span class="s1">&#39;mu&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)[:,</span><span class="n">comm_to_code</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span><span class="s1">&#39;Comm.Linux_Kernel&#39;</span><span class="p">)]</span>
@@ -15324,7 +15184,7 @@ $$<p>For the first and last outcomes (0 and 5), we consider the density of the i
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[72]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">az</span><span class="o">.</span><span class="n">plot_posterior</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">lk_traces</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span><span class="n">ref_val</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">point_estimate</span><span class="o">=</span><span class="s1">&#39;mode&#39;</span><span class="p">,</span><span class="n">hdi_prob</span><span class="o">=.</span><span class="mi">95</span><span class="p">,</span><span class="n">bw</span><span class="o">=</span><span class="s1">&#39;scott&#39;</span><span class="p">)</span>
@@ -15366,14 +15226,14 @@ $$<p>For the first and last outcomes (0 and 5), we consider the density of the i
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>This plot shows that 98% of the density is below 3, and the 95% HDI is within the interval [0,3). Here we cannot consider ROPEs of any size as the 95% HDI includes 3. These results indicate that <strong>the Linux Kernel Community shows a clear tendency towards protective governance style</strong>. However, the tendency is not radical, it is in fact steered to neutral answers. These results, together with the relatively large size of the HDI, might indicate that the community is experiencing a transition towards a less protective governance style (this is also observed in the mean distributions of questions V27 and V30).</p>
+<p>This plot shows that 98% of the density is below 3, and the 95% HDI is within the interval [0,3.1). Here we cannot consider ROPEs of any size as the 95% HDI includes 3. These results indicate that <strong>the Linux Kernel Community shows a clear tendency towards protective governance style</strong>. However, the tendency is not radical, it is in fact steered to neutral answers. These results, together with the relatively large size of the HDI, might indicate that the community is experiencing a transition towards a less protective governance style (this is also observed in the mean distributions of questions V27 and V30).</p>
 <p>In summary, we can conclude that <strong>H2 is true</strong>.</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="H3:-The-Coala-Community-is-more-lenient-than-the-Linux-Kernel-Community">H3: The Coala Community is more lenient than the Linux Kernel Community<a class="anchor-link" href="#H3:-The-Coala-Community-is-more-lenient-than-the-Linux-Kernel-Community">&#182;</a></h3><p>To analyze this hypothesis we study the answers to question <em>V33: I never say no to a pull request/patch. I mentor the contributor to elevate his/her PR/patch to a mergeable state</em>. This is the only question necessary to determine whether a community is lenient (see above).</p>
+<h3 id="H3:-The-Coala-Community-is-more-lenient-than-the-Linux-Kernel-Community">H3: The Coala Community is more lenient than the Linux Kernel Community<a class="anchor-link" href="#H3:-The-Coala-Community-is-more-lenient-than-the-Linux-Kernel-Community">&#182;</a></h3><p>To analyze this hypothesis we study the answers to question <em>V33: I never say no to a pull request/patch. I mentor the contributor to elevate his/her PR/patch to a mergeable state</em>. This is the only question necessary to determine whether a community is lenient (see <a href="#The-Goals-of-the-Analysis">above</a>).</p>
 
 </div>
 </div>
@@ -15385,7 +15245,7 @@ $$<p>For the first and last outcomes (0 and 5), we consider the density of the i
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[96]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">7.5</span><span class="p">,</span><span class="mf">4.5</span><span class="p">))</span>
@@ -15488,13 +15348,13 @@ $$<p>For the first and last outcomes (0 and 5), we consider the density of the i
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Furthermore, we can look at the <em>difference</em> of the mean distributions and the <em>effect size</em>. When distributions are equal, both the difference of means and effect size are close to zero. In the presence of a difference, the difference of means and effect size distribuions shift towards left or right---depending on the values of the scale.</p>
+<p>Furthermore, we can look at the <em>difference</em> of the mean distributions and the <em>effect size</em>. When distributions are equal, both the difference of means and effect size are close to zero. If they are different, the distributions of difference of means and effect size shift towards left or right---depending on the values of the scale.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[97]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">m_lk_v33</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">t_v33</span><span class="o">.</span><span class="n">posterior</span><span class="p">[</span><span class="s1">&#39;mu&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)[:,</span><span class="n">comm_to_code</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span><span class="s1">&#39;Comm.Linux_Kernel&#39;</span><span class="p">)]</span>
@@ -15576,7 +15436,7 @@ $$<p>For the first and last outcomes (0 and 5), we consider the density of the i
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="H4-&amp;-H5-The--FOSSASIA--community--adopts--an--equitable--style--of-governance-for-its-pull-request-process-|-The-Odoo-community-adopts-an-equitable-style-of-governance-for-its-pull-request-process">H4 &amp; H5 The  FOSSASIA  community  adopts  an  equitable  style  of governance for its pull request process | The Odoo community adopts an equitable style of governance for its pull request process<a class="anchor-link" href="#H4-&amp;-H5-The--FOSSASIA--community--adopts--an--equitable--style--of-governance-for-its-pull-request-process-|-The-Odoo-community-adopts-an-equitable-style-of-governance-for-its-pull-request-process">&#182;</a></h3><p>To analyze these hypotheses we analyze the answers to questions V31-V32. In this case, we focus on the FOSSASIA and Odoo communities. Questions V31-V32 determine whether a community adopts a protective style of governance (see above). Concretely, we say a community that adopts a protective governance style if it is positive to any of the questions V31-V32.</p>
+<h3 id="H4-&amp;-H5-The--FOSSASIA--community--adopts--an--equitable--style--of-governance-for-its-pull-request-process-|-The-Odoo-community-adopts-an-equitable-style-of-governance-for-its-pull-request-process">H4 &amp; H5 The  FOSSASIA  community  adopts  an  equitable  style  of governance for its pull request process | The Odoo community adopts an equitable style of governance for its pull request process<a class="anchor-link" href="#H4-&amp;-H5-The--FOSSASIA--community--adopts--an--equitable--style--of-governance-for-its-pull-request-process-|-The-Odoo-community-adopts-an-equitable-style-of-governance-for-its-pull-request-process">&#182;</a></h3><p>To analyze these hypotheses we analyze the answers to questions V31-V32. In this case, we focus on the FOSSASIA and Odoo communities. Questions V31-V32 determine whether a community adopts a protective style of governance (see <a href="#The-Goals-of-the-Analysis">above</a>). Concretely, we say a community that adopts a protective governance style if it is positive to any of the questions V31-V32.</p>
 <p>We follow the same approach as for the leniency and protectiveness analyses we performed above.</p>
 
 </div>
@@ -15589,7 +15449,7 @@ $$<p>For the first and last outcomes (0 and 5), we consider the density of the i
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[99]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">m_f_v31</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">t_v31</span><span class="o">.</span><span class="n">posterior</span><span class="p">[</span><span class="s1">&#39;mu&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)[:,</span><span class="n">comm_to_code</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span><span class="s1">&#39;Comm.FOSSASIA&#39;</span><span class="p">)]</span>
@@ -15697,7 +15557,7 @@ $$<p>For the first and last outcomes (0 and 5), we consider the density of the i
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[101]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">az</span><span class="o">.</span><span class="n">plot_posterior</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">f_traces</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span><span class="n">ref_val</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">point_estimate</span><span class="o">=</span><span class="s1">&#39;mode&#39;</span><span class="p">,</span>
@@ -15763,7 +15623,7 @@ $$<p>For the first and last outcomes (0 and 5), we consider the density of the i
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>As expected,  <strong>the plot for the FOSSASIA community cleary indicates that the community follows an equitable governance style</strong>. The 95% HDI is well below 3, in fact the right limit is 1.3.
-Likewise the result for <strong>the Odoo community indicates that it also follows an equitable governance style</strong>; the 95% HDI is also below 4. However, in this case, the results are more widespread than for the FOSSASIA community. The right limit of the 95% HDI interval is 2.9; indicating that there are some participants that lean towards neutral answers.
+Likewise the result for <strong>the Odoo community indicates that it also follows an equitable governance style</strong>; the 95% HDI is below (but including) 3. However, in this case, the results are more widespread than for the FOSSASIA community. The right limit of the 95% HDI interval is 3; indicating that there are some participants that lean towards neutral answers.
 As for the Linux Kernel community, this effect may be explained by a transitining phase towards a more equitable governance style.</p>
 <p>In summary, we can conclude that <strong>H3 and H4 are true</strong>.</p>
 
@@ -15798,11 +15658,10 @@ As for the Linux Kernel community, this effect may be explained by a transitinin
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[107]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## If using saved .netcdf traces</span>
-<span class="n">communities</span> <span class="o">=</span> <span class="n">df2</span><span class="o">.</span><span class="n">Community</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">communities</span> <span class="o">=</span> <span class="n">df2</span><span class="o">.</span><span class="n">Community</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
     
 <span class="k">def</span> <span class="nf">get_results</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
     <span class="n">m_c_v27</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">t_v27</span><span class="o">.</span><span class="n">posterior</span><span class="p">[</span><span class="s1">&#39;mu&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)[:,</span><span class="n">comm_to_code</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span><span class="n">c</span><span class="p">)]</span>
@@ -15904,7 +15763,7 @@ As for the Linux Kernel community, this effect may be explained by a transitinin
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[103]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_mins</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
@@ -15944,7 +15803,7 @@ As for the Linux Kernel community, this effect may be explained by a transitinin
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>&lt;ipython-input-103-8d484c01a97f&gt;:18: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify &#39;dtype=object&#39; when creating the ndarray
+<pre>&lt;ipython-input-17-8d484c01a97f&gt;:18: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify &#39;dtype=object&#39; when creating the ndarray
   v_mins = np.array([get_mins(c) for c in communities])
 </pre>
 </div>
@@ -15968,7 +15827,7 @@ As for the Linux Kernel community, this effect may be explained by a transitinin
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[104]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">ternary</span>
@@ -16113,7 +15972,7 @@ As for the Linux Kernel community, this effect may be explained by a transitinin
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[105]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## Boundary and Gridlines</span>
@@ -16242,7 +16101,7 @@ As for the Linux Kernel community, this effect may be explained by a transitinin
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[111]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib.patches</span> <span class="kn">import</span> <span class="n">Rectangle</span>
@@ -16346,7 +16205,7 @@ As for the Linux Kernel community, this effect may be explained by a transitinin
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[112]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib.lines</span> <span class="kn">import</span> <span class="n">Line2D</span>  
@@ -16464,7 +16323,7 @@ As for the Linux Kernel community, this effect may be explained by a transitinin
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[113]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="p">[</span><span class="n">ppc_count_cdfs_inferencedata</span><span class="p">(</span><span class="n">t_v27</span><span class="p">,</span><span class="n">df2</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="s1">&#39;V27&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df2</span><span class="o">.</span><span class="n">Community</span><span class="o">.</span><span class="n">unique</span><span class="p">()]</span>
@@ -16764,7 +16623,7 @@ As for the Linux Kernel community, this effect may be explained by a transitinin
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[114]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">mean_densities_inferencedata</span><span class="p">(</span><span class="n">t_v27</span><span class="p">,</span><span class="s1">&#39;V27&#39;</span><span class="p">)</span>
@@ -16808,7 +16667,7 @@ As for the Linux Kernel community, this effect may be explained by a transitinin
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[115]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pm</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="n">t_v27</span><span class="p">)</span>
@@ -16827,7 +16686,7 @@ As for the Linux Kernel community, this effect may be explained by a transitinin
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[115]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[24]:</div>
 
 
 
@@ -17364,7 +17223,7 @@ As for the Linux Kernel community, this effect may be explained by a transitinin
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[116]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="p">[</span><span class="n">ppc_count_cdfs_inferencedata</span><span class="p">(</span><span class="n">t_v28</span><span class="p">,</span><span class="n">df2</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="s1">&#39;V28&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df2</span><span class="o">.</span><span class="n">Community</span><span class="o">.</span><span class="n">unique</span><span class="p">()]</span>
@@ -17664,7 +17523,7 @@ As for the Linux Kernel community, this effect may be explained by a transitinin
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[117]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">mean_densities_inferencedata</span><span class="p">(</span><span class="n">t_v28</span><span class="p">,</span><span class="s1">&#39;V28&#39;</span><span class="p">)</span>
@@ -17708,7 +17567,7 @@ As for the Linux Kernel community, this effect may be explained by a transitinin
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[118]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pm</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="n">t_v28</span><span class="p">)</span>
@@ -17727,7 +17586,7 @@ As for the Linux Kernel community, this effect may be explained by a transitinin
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[118]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[27]:</div>
 
 
 
@@ -18264,7 +18123,7 @@ As for the Linux Kernel community, this effect may be explained by a transitinin
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[119]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="p">[</span><span class="n">ppc_count_cdfs_inferencedata</span><span class="p">(</span><span class="n">t_v29</span><span class="p">,</span><span class="n">df2</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="s1">&#39;V29&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df2</span><span class="o">.</span><span class="n">Community</span><span class="o">.</span><span class="n">unique</span><span class="p">()]</span>
@@ -18564,7 +18423,7 @@ As for the Linux Kernel community, this effect may be explained by a transitinin
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[120]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">mean_densities_inferencedata</span><span class="p">(</span><span class="n">t_v29</span><span class="p">,</span><span class="s1">&#39;V29&#39;</span><span class="p">)</span>
@@ -18608,7 +18467,7 @@ As for the Linux Kernel community, this effect may be explained by a transitinin
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[121]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pm</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="n">t_v29</span><span class="p">)</span>
@@ -18627,7 +18486,7 @@ As for the Linux Kernel community, this effect may be explained by a transitinin
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[121]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[30]:</div>
 
 
 
@@ -19164,7 +19023,7 @@ As for the Linux Kernel community, this effect may be explained by a transitinin
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[122]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[31]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="p">[</span><span class="n">ppc_count_cdfs_inferencedata</span><span class="p">(</span><span class="n">t_v30</span><span class="p">,</span><span class="n">df2</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="s1">&#39;V30&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df2</span><span class="o">.</span><span class="n">Community</span><span class="o">.</span><span class="n">unique</span><span class="p">()]</span>
@@ -19464,7 +19323,7 @@ As for the Linux Kernel community, this effect may be explained by a transitinin
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[123]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[32]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">mean_densities_inferencedata</span><span class="p">(</span><span class="n">t_v30</span><span class="p">,</span><span class="s1">&#39;V30&#39;</span><span class="p">)</span>
@@ -19508,7 +19367,7 @@ As for the Linux Kernel community, this effect may be explained by a transitinin
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[124]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[33]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pm</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="n">t_v30</span><span class="p">)</span>
@@ -19527,7 +19386,7 @@ As for the Linux Kernel community, this effect may be explained by a transitinin
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[124]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[33]:</div>
 
 
 
@@ -20064,7 +19923,7 @@ As for the Linux Kernel community, this effect may be explained by a transitinin
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[125]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[34]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="p">[</span><span class="n">ppc_count_cdfs_inferencedata</span><span class="p">(</span><span class="n">t_v31</span><span class="p">,</span><span class="n">df2</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="s1">&#39;V31&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df2</span><span class="o">.</span><span class="n">Community</span><span class="o">.</span><span class="n">unique</span><span class="p">()]</span>
@@ -20364,7 +20223,7 @@ As for the Linux Kernel community, this effect may be explained by a transitinin
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[126]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[35]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">mean_densities_inferencedata</span><span class="p">(</span><span class="n">t_v31</span><span class="p">,</span><span class="s1">&#39;V31&#39;</span><span class="p">)</span>
@@ -20408,7 +20267,7 @@ As for the Linux Kernel community, this effect may be explained by a transitinin
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[127]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[36]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pm</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="n">t_v31</span><span class="p">)</span>
@@ -20427,7 +20286,7 @@ As for the Linux Kernel community, this effect may be explained by a transitinin
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[127]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[36]:</div>
 
 
 
@@ -20964,7 +20823,7 @@ As for the Linux Kernel community, this effect may be explained by a transitinin
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[128]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[37]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="p">[</span><span class="n">ppc_count_cdfs_inferencedata</span><span class="p">(</span><span class="n">t_v32</span><span class="p">,</span><span class="n">df2</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="s1">&#39;V32&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df2</span><span class="o">.</span><span class="n">Community</span><span class="o">.</span><span class="n">unique</span><span class="p">()]</span>
@@ -21264,7 +21123,7 @@ As for the Linux Kernel community, this effect may be explained by a transitinin
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[129]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[38]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">mean_densities_inferencedata</span><span class="p">(</span><span class="n">t_v32</span><span class="p">,</span><span class="s1">&#39;V32&#39;</span><span class="p">)</span>
@@ -21308,7 +21167,7 @@ As for the Linux Kernel community, this effect may be explained by a transitinin
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[130]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[39]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pm</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="n">t_v32</span><span class="p">)</span>
@@ -21327,7 +21186,7 @@ As for the Linux Kernel community, this effect may be explained by a transitinin
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[130]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[39]:</div>
 
 
 
@@ -21864,7 +21723,7 @@ As for the Linux Kernel community, this effect may be explained by a transitinin
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[131]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[40]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="p">[</span><span class="n">ppc_count_cdfs_inferencedata</span><span class="p">(</span><span class="n">t_v33</span><span class="p">,</span><span class="n">df2</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="s1">&#39;V33&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df2</span><span class="o">.</span><span class="n">Community</span><span class="o">.</span><span class="n">unique</span><span class="p">()]</span>
@@ -22164,7 +22023,7 @@ As for the Linux Kernel community, this effect may be explained by a transitinin
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[132]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[41]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">mean_densities_inferencedata</span><span class="p">(</span><span class="n">t_v33</span><span class="p">,</span><span class="s1">&#39;V33&#39;</span><span class="p">)</span>
@@ -22208,7 +22067,7 @@ As for the Linux Kernel community, this effect may be explained by a transitinin
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[133]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[42]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pm</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="n">t_v33</span><span class="p">)</span>
@@ -22227,7 +22086,7 @@ As for the Linux Kernel community, this effect may be explained by a transitinin
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[133]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[42]:</div>
 
 
 
